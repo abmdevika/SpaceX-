@@ -8,10 +8,10 @@
 
 .header {
   border-bottom: 1px solid lightgrey;
-}
-
-.sidebar {
-  border-right: 1px solid lightgrey;
+  padding: 0 1rem;
+  margin: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .footer {
@@ -41,8 +41,13 @@
   .body {
     grid-template-columns: 1fr;
     overflow: scroll;
+    height: auto;
   }
   .content {
     justify-content: center;
+    overflow: unset;
+  }
+  .header {
+    font-size: 1.5rem;
   }
 }
