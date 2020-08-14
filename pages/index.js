@@ -8,7 +8,7 @@ import { fetchAPI } from '../lib/api';
 import styles from '../styles/Home.module.scss';
 
 export async function getServerSideProps(context) {
-  const allLaunches = await fetchAPI('limit=1');
+  const allLaunches = await fetchAPI('limit=100');
 
   return { props: { allLaunches } };
 }
@@ -18,7 +18,7 @@ export default function Home({ allLaunches }) {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('?limit=10', undefined, {
+    router.push('?limit=100', undefined, {
       shallow: true,
     });
   }, []);
@@ -34,8 +34,6 @@ export default function Home({ allLaunches }) {
     fetchAPI(queryParam).then((result) => {
       setAllSpaceLaunch(result);
     });
-
-    console.log(queryParam, router.query);
   }, [
     router.query.limit,
     router.query.launch_year,
