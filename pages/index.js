@@ -2,7 +2,7 @@ import Head from 'next/head';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
-import Lunches from './launches';
+import Lunches from '../components/launches';
 
 import { fetchAPI } from '../lib/api';
 import styles from '../styles/Home.module.scss';

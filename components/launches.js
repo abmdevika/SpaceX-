@@ -1,8 +1,6 @@
-import Head from 'next/head';
-
-import Filter from '../components/Filter';
-import Card from '../components/Card';
-import NoData from '../components/NoData';
+import Filter from './Filter';
+import Card from './Card';
+import NoData from './NoData';
 import styles from '../styles/Home.module.scss';
 
 export default function Launches({ allLaunches }) {
