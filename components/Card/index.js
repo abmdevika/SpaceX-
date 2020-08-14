@@ -10,7 +10,12 @@ export default function Card({
 }) {
   return (
     <div className={styles.Card}>
-      <img src={links.mission_patch} alt={mission_name} width='256' />
+      <img
+        className='blur-image'
+        src={links.mission_patch}
+        alt={mission_name}
+        width='256'
+      />
       <div>
         <h5>
           {mission_name} #{flight_number}
@@ -34,6 +39,20 @@ export default function Card({
           </li>
         </ul>
       </div>
+      <style jsx>{`
+       
+        .blur-image img {
+          blur(25px);
+          width: 256px;
+          height: 256px;
+        }
+        img {
+         
+          width: 256px;
+          height: 256px;
+       
+        }
+    `}</style>
     </div>
   );
 }
