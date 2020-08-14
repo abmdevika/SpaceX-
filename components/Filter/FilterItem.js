@@ -5,6 +5,7 @@ export default function FilterItem({
   filterItems,
   OnFilterClick,
   filter,
+  selectedFilter,
 }) {
   return (
     <div className={customClass}>
@@ -14,6 +15,7 @@ export default function FilterItem({
           <Tile
             key={filterItem}
             label={filterItem}
+            isActive={filterItem == selectedFilter}
             onTileClick={() => {
               OnFilterClick(filter, filterItem);
             }}

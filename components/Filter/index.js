@@ -15,9 +15,6 @@ export default function Filter() {
     queryParam = Object.keys(router.query)
       .map((key) => {
         if (filter === key) {
-          if (typeof query === 'string') {
-            return key + '=' + query.toLowerCase();
-          }
           return key + '=' + query;
         }
         return key + '=' + router.query[key];
@@ -25,21 +22,12 @@ export default function Filter() {
       .join('&');
 
     if (!(filter in router.query)) {
-      console.log(queryParam);
       queryParam += '&' + filter + '=' + query;
     }
-    console.log(queryParam);
+
     router.push('?' + queryParam, '?' + queryParam, {
       shallow: true,
     });
-
-    // router.push(
-    //     `?limit=1&land_success=${isSuccess.toLowerCase()}`,
-    //     undefined,
-    //     {
-    //       shallow: true,
-    //     }
-    //   )
   };
   return (
     <div className={styles.filterContainer}>
@@ -47,6 +35,7 @@ export default function Filter() {
       <FilterItem
         title='Launch Year'
         filter='launch_year'
+        selectedFilter={router.query.launch_year}
         customClass={styles.item}
         filterItems={years}
         OnFilterClick={handleRouting}
@@ -54,15 +43,17 @@ export default function Filter() {
       <FilterItem
         title='Successful Launch'
         filter='launch_success'
+        selectedFilter={router.query.launch_success}
         customClass={styles.item}
-        filterItems={['True', 'False']}
+        filterItems={['true', 'false']}
         OnFilterClick={handleRouting}
       />
       <FilterItem
         title='Successful Landing'
         filter='land_success'
+        selectedFilter={router.query.land_success}
         customClass={styles.item}
-        filterItems={['True', 'False']}
+        filterItems={['true', 'false']}
         OnFilterClick={handleRouting}
       />
     </div>
