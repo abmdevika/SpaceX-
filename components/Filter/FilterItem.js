@@ -9,7 +9,7 @@ export default function FilterItem({
 }) {
   return (
     <div className={customClass}>
-      <h5>{title}</h5>
+      <h3>{title}</h3>
       <div>
         {filterItems.map((filterItem) => (
           <Tile

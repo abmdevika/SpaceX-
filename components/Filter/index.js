@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import FilterItem from './FilterItem';
 import styles from './Filter.module.scss';
@@ -31,7 +30,7 @@ export default function Filter() {
   };
   return (
     <div className={styles.filterContainer}>
-      <span>Filters</span>
+      <h2>Filters</h2>
       <FilterItem
         title='Launch Year'
         filter='launch_year'
