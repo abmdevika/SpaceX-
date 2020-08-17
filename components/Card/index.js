@@ -1,3 +1,4 @@
+import LazyLoad from 'react-lazyload';
 import styles from './Card.module.scss';
 
 export default function Card({
@@ -10,13 +11,15 @@ export default function Card({
 }) {
   return (
     <div className={styles.Card}>
-      <img
-        className='blur-image'
-        src={links.mission_patch}
-        alt={mission_name}
-        width='256'
-        height='256'
-      />
+      <LazyLoad height={256}>
+        <img
+          className='blur-image'
+          src={links.mission_patch_small}
+          alt={mission_name}
+          width='256'
+          height='256'
+        />
+      </LazyLoad>
       <div>
         <h2>
           {mission_name} #{flight_number}
