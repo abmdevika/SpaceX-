@@ -15,11 +15,12 @@ export default function Card({
         src={links.mission_patch}
         alt={mission_name}
         width='256'
+        height='256'
       />
       <div>
-        <h5>
+        <h2>
           {mission_name} #{flight_number}
-        </h5>
+        </h2>
         <label>mission_id:</label>
         <ul>
           {mission_id.map((missionId) => (
