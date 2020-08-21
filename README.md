@@ -21,3 +21,4 @@ npm i sass
 1.added node engines version in package.json
 
 2. Pipeline from git to deploy to heroku
+## Added light house result in image.png
